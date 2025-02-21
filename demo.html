@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shafqat Ameen - Portfolio</title>
+    <link rel="stylesheet" href="demo.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <img src="content/formal.jpg" alt="Shafqat Ameen">
+        <h1>Shafqat Ameen Mir</h1>
+        <p>AI/ML Enthusiast | Full-Stack Developer | Robotics | Finance</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about" class="content-section">
+        <h2>About Me</h2>
+        <p>Innovative AI/ML enthusiast with experience in machine learning, data visualization, and robotics. Skilled in Python, TensorFlow, and full-stack development, ranked 2nd in B.Tech IT (2022–2023).</p>
+    </section>
+    
+    <section id="projects" class="content-section">
+        <h2>Projects & Experience</h2>
+        <ul>
+            <li><strong>Prosthetic Robotic Limb</strong> - BCI-controlled limb for paraplegic patients using Python.</li>
+            <li><strong>Camera-LiDAR Sensor Fusion</strong> - Integrating camera and LiDAR data for autonomous perception.</li>
+            <li><strong>Domain Analyzer Web App</strong> - Web tool for domain analysis using Flask & APIs.</li>
+            <li><strong>Economic Dashboard</strong> - Live stock market analysis using Python & Plotly.</li>
+        </ul>
+    </section>
+    
+    <section id="skills" class="content-section">
+        <h2>Skills</h2>
+        <p>Python, ML, Data Visualization, TensorFlow, ROS, Portfolio Management, JavaScript, GitHub, Blockchain, Arduino</p>
+    </section>
+    
+    <section id="achievements" class="content-section">
+        <h2>Achievements</h2>
+        <div class="gallery">
+            <div>
+                <img src="content/achivement_bot.jpg" alt="Hackathon Win">
+                <p>1st Place - Build-A-Bot Hackathon 2024</p>
+            </div>
+            <div>
+                <img src="content/2nd_position_2nd_yr.jpg" alt="Academic Rank">
+                <p>2nd Rank in B.Tech IT (2022-2023)</p>
+            </div>
+            <div>
+                <img src="content/TechieSlayer_achievement.jpg" alt="Techie Slayer">
+                <p>3rd Place - Techie Slayer Competition 2023</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="content-section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:shafqatameen316@gmail.com">shafqatameen316@gmail.com</a></p>
+        <p><a href="https://www.linkedin.com/in/shafqat-ameen" target="_blank">LinkedIn</a></p>
+        <p><a href="https://github.com/shafqatameen" target="_blank">GitHub</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Shafqat Ameen Mir. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
