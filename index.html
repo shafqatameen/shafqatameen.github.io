@@ -3,49 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>Shafqat Ameen Mir | AI, ML, Finance & Investment Projects</title>
+    <meta name="description" content="Explore cutting-edge AI, Machine Learning, Finance, and Investment projects by Shafqat Ameen Mir. Research Intern @MulticoreWare. Portfolio Management, Sensor Fusion, and Robotics.">
+    <meta name="keywords" content="AI projects, Machine Learning, Investment Strategies, Sensor Fusion, Finance, Portfolio Management, Open3D, Data Science, Robotics">
+    <meta name="author" content="Shafqat Ameen Mir">
+    <meta name="robots" content="index, follow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Open Graph (OG) for Social Media -->
+    <meta property="og:title" content="Shafqat Ameen Mir | AI & Finance Projects">
+    <meta property="og:description" content="Discover AI, ML, Finance, and Sensor Fusion projects. Research Intern @MulticoreWare.">
+    <meta property="og:image" content="https://meerinvestment.online/assets/preview.jpg">
+    <meta property="og:url" content="https://meerinvestment.online">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shafqat Ameen Mir | AI & Finance Projects">
+    <meta name="twitter:description" content="Explore AI, ML, and Finance innovations.">
+    <meta name="twitter:image" content="https://meerinvestment.online/assets/preview.jpg">
+
     <title>Shafqat Ameen - Portfolio</title>
     <link rel="stylesheet" href="demo.css">
     <script defer src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script>
-    // 🌟 Three.js Particle Background
-    let scene = new THREE.Scene();
-    let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    let renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("bgCanvas"), alpha: true });
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
-
-    let particles = new THREE.Geometry();
-    let particleMaterial = new THREE.PointsMaterial({ color: 0x63b3ed, size: 2 });
-
-    for (let i = 0; i < 300; i++) {
-        let particle = new THREE.Vector3(
-            (Math.random() - 0.5) * 1000,
-            (Math.random() - 0.5) * 1000,
-            (Math.random() - 0.5) * 1000
-        );
-        particles.vertices.push(particle);
-    }
-
-    let particleSystem = new THREE.Points(particles, particleMaterial);
-    scene.add(particleSystem);
-
-    camera.position.z = 100;
-
-    function animate() {
-        requestAnimationFrame(animate);
-        particleSystem.rotation.y += 0.001;
-        renderer.render(scene, camera);
-    }
-    animate();
-
-    window.addEventListener("resize", function () {
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-    });
-</script>
 
 </head>
 <body>
@@ -159,7 +142,16 @@
         <p>Email: <a href="mailto:shafqatameen316@gmail.com">shafqatameen316@gmail.com</a></p>
         <p><a href="https://www.linkedin.com/in/shafqat-ameen" target="_blank">LinkedIn</a></p>
         <p><a href="https://github.com/shafqatameen" target="_blank">GitHub</a></p>
+    
+        <h3>Subscribe for Updates</h3>
+        <form id="emailForm">
+            <input type="email" id="emailInput" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    
+        <p id="successMessage" style="display: none; color: green;">Thank you for subscribing!</p>
     </section>
+    
     
     <footer>
         <p>&copy; 2025 Shafqat Ameen Mir. All rights reserved.</p>
