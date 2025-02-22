@@ -70,3 +70,23 @@ footer {
     padding: 10px;
     margin-top: 20px;
 }
+
+    .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        padding: 10px;
+    }
+    .skills-container span {
+        background: #1e1e2e;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 10px;
+        font-weight: bold;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    }
+    .highlight {
+        color: #ff9800;
+        font-weight: bold;
+    }
