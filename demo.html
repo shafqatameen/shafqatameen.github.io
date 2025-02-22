@@ -6,8 +6,52 @@
     <title>Shafqat Ameen - Portfolio</title>
     <link rel="stylesheet" href="demo.css">
     <script defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+    // 🌟 Three.js Particle Background
+    let scene = new THREE.Scene();
+    let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    let renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("bgCanvas"), alpha: true });
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    let particles = new THREE.Geometry();
+    let particleMaterial = new THREE.PointsMaterial({ color: 0x63b3ed, size: 2 });
+
+    for (let i = 0; i < 300; i++) {
+        let particle = new THREE.Vector3(
+            (Math.random() - 0.5) * 1000,
+            (Math.random() - 0.5) * 1000,
+            (Math.random() - 0.5) * 1000
+        );
+        particles.vertices.push(particle);
+    }
+
+    let particleSystem = new THREE.Points(particles, particleMaterial);
+    scene.add(particleSystem);
+
+    camera.position.z = 100;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        particleSystem.rotation.y += 0.001;
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener("resize", function () {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+    });
+</script>
+
 </head>
 <body>
+    <canvas id="bgCanvas"></canvas>
+    <div class="dragon"></div>
+
     <header>
         <img src="content/formal.jpg" alt="Shafqat Ameen">
         <h1>Shafqat Ameen Mir</h1>
