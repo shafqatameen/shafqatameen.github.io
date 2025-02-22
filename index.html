@@ -4,68 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shafqat Ameen - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="demo.css">
+    <script defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+    // 🌟 Three.js Particle Background
+    let scene = new THREE.Scene();
+    let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    let renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("bgCanvas"), alpha: true });
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    let particles = new THREE.Geometry();
+    let particleMaterial = new THREE.PointsMaterial({ color: 0x63b3ed, size: 2 });
+
+    for (let i = 0; i < 300; i++) {
+        let particle = new THREE.Vector3(
+            (Math.random() - 0.5) * 1000,
+            (Math.random() - 0.5) * 1000,
+            (Math.random() - 0.5) * 1000
+        );
+        particles.vertices.push(particle);
+    }
+
+    let particleSystem = new THREE.Points(particles, particleMaterial);
+    scene.add(particleSystem);
+
+    camera.position.z = 100;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        particleSystem.rotation.y += 0.001;
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener("resize", function () {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+    });
+</script>
+
 </head>
 <body>
+    <canvas id="bgCanvas"></canvas>
+    <div class="dragon"></div>
+
     <header>
         <img src="content/formal.jpg" alt="Shafqat Ameen">
         <h1>Shafqat Ameen Mir</h1>
         <p>AI/ML Enthusiast | Full-Stack Developer | Robotics | Finance</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     
-    <section>
-        <h2>About Me</h2>
-        <p>Innovative and detail-oriented AI/ML enthusiast with hands-on experience in developing cutting-edge projects integrating machine learning, data visualization, and robotics. Skilled in Python, TensorFlow, and full-stack development, with a proven record of academic excellence, including securing 2nd rank in B.Tech IT (2022–2023).</p>
+    <section id="about" class="content-section">
+        <h2>🚀 About Me</h2>
+        <p>
+            Hey there! I'm <strong>Shafqat Ameen Mir</strong>, an <span class="highlight">AI/ML enthusiast</span> with a passion for 
+            <span class="highlight">machine learning, robotics, and finance</span>. 
+            Always pushing boundaries in <strong>AI, automation, and investment tech</strong>. 
+        </p>
+        <p>
+            🔹 Skilled in <span class="highlight">Python, TensorFlow, OpenCV, and full-stack development</span>.  
+            <br>🔹 Ranked <strong>#2</strong> in <strong>B.Tech IT (2022–2023)</strong>.  
+            <br>🔹 Building AI-driven solutions for <span class="highlight">finance, robotics, and sustainability</span>.  
+        </p>
+        <p>
+            Currently working on: <span class="highlight">Prosthetic Robotic Limbs</span>, 
+            <span class="highlight">AI-powered financial tools</span>, and <span class="highlight">Kachra Seth App</span> ♻️.
+        </p>
     </section>
     
-    <section>
-        <h2>Projects & Experience</h2>
-        <ul>
-            <li><strong>Prosthetic Robotic Limb</strong> - Brain-computer interface-controlled limb for paraplegic patients using Python and Signal Processing.</li>
-            <li><strong>Camera-LiDAR Sensor Fusion</strong> - Integrating camera and LiDAR data for enhanced autonomous perception.</li>
-            <li><strong>Domain Analyzer Web App</strong> - Web tool for domain analysis using Python, Flask, and APIs.</li>
-            <li><strong>Economic Dashboard for Stock Analysis</strong> - Live market analysis using Python, Plotly, and Flask.</li>
-        </ul>
-    </section>
+    <section id="projects" class="content-section">
+        <h2>🚀 Projects & Experience</h2>
+        <div class="project-container">
+            <div class="project">
+                <h3>🦾 Prosthetic Robotic Limb</h3>
+                <p>BCI-controlled limb for paraplegic patients using <strong>EEG signal processing, AI-driven motion control, and real-time sensor fusion</strong>.</p>
+                <span class="tech-stack">Python | OpenCV | ROS | Embedded Systems</span>
+            </div>
     
-    <section>
-        <h2>Skills</h2>
-        <p>Python, Machine Learning, Data Visualization, TensorFlow, ROS, Portfolio Management, JavaScript, GitHub, Blockchain, Arduino</p>
-    </section>
+            <div class="project">
+                <h3>🔬 Camera-LiDAR Sensor Fusion</h3>
+                <p>Integrating <strong>LiDAR depth mapping with computer vision</strong> for enhanced autonomous perception in robotics and AI-driven systems.</p>
+                <span class="tech-stack">Open3D | Point Cloud Processing | Deep Learning</span>
+            </div>
     
-    <section>
-        <h2>Achievements</h2>
-        <div>
-            <div>
-                <img src="content/achivement_bot.jpg" alt="Achievement 1">
-                <p>1st Place in Build-A-Bot 24-hour Hackathon by Coding Blocks KARE 2024 </p>
+            <div class="project">
+                <h3>🌐 Domain Analyzer Web App</h3>
+                <p>A cybersecurity tool retrieving <strong>WHOIS, DNS records, and security status</strong> with automated reporting.</p>
+                <span class="tech-stack">Flask | APIs | Python | VirusTotal</span>
             </div>
-            <div>
-                <img src="content\2nd_position_2nd_yr.jpg" alt="Achievement 2">
-                <p>2nd rank in the overall academic performanceduring academic year 2022-2023</p>
+    
+            <div class="project">
+                <h3>📊 AI-Powered Economic Dashboard</h3>
+                <p>Live stock market analysis with **automated financial insights, trend predictions, and interactive visualizations**.</p>
+                <span class="tech-stack">Python | Plotly | Machine Learning | API Integration</span>
             </div>
-            <div>
-                <img src="content/TechieSlayer_achievement.jpg" alt="Achievement 3">
-                <p>3rd Place in Techie Slayer Competition By KARE During VINTRA 2023</p>
+    
+            <div class="project">
+                <h3>♻️ Kachra Seth – Sustainable Waste Management</h3>
+                <p>A platform for selling household scrap, optimizing waste collection with **AI-powered logistics & mobile payments**.</p>
+                <span class="tech-stack">Web & Mobile App | Data Analytics | Automation</span>
             </div>
-
         </div>
     </section>
     
-    <section>
-        <h2>Certifications</h2>
-        <p>Python Programming (Grade: S), Object-Oriented Programming (Java, Grade: A), Data Structures and Algorithms (Grade: B)</p>
+    <section id="skills" class="content-section">
+        <h2>🚀 Skills & Tech Stack</h2>
+        <div class="skills-container">
+            <span>💻 Python, C++, JavaScript</span>
+            <span>🤖 Machine Learning (TensorFlow, OpenCV, Open3D)</span>
+            <span>📊 Data Science (Visualization, Portfolio Management, Economic Analytics)</span>
+            <span>🔬 Robotics & Embedded Systems (ROS, Arduino, Sensor Fusion, BCI)</span>
+            <span>🌐 Web & Software Dev (GitHub, APIs, Hosting)</span>
+            <span>🛡️ Blockchain & Cybersecurity (Security Assessment, Smart Contracts)</span>
+        </div>
     </section>
     
-    <section>
+    
+    <section id="achievements" class="content-section">
+        <h2>🏆 Achievements</h2>
+        <div class="gallery">
+            <div class="achievement">
+                <img src="content/achivement_bot.jpg" alt="Hackathon Win">
+                <h3>🥇 1st Place - Build-A-Bot Hackathon 2024</h3>
+                <p>Designed an AI-powered bot leveraging **ML, automation, and real-time analytics**.</p>
+            </div>
+            <div class="achievement">
+                <img src="content/2nd_position_2nd_yr.jpg" alt="Academic Rank">
+                <h3>🥈 2nd Rank - B.Tech IT (2022-2023)</h3>
+                <p>Ranked among the **top performers**, excelling in **AI, ML, and robotics**.</p>
+            </div>
+            <div class="achievement">
+                <img src="content/TechieSlayer_achievement.jpg" alt="Techie Slayer">
+                <h3>🥉 3rd Place - Techie Slayer Competition 2023</h3>
+                <p>Competed in a high-level **coding & problem-solving challenge**, securing the podium finish.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="content-section">
         <h2>Contact</h2>
-        <p>Email: <a href="#" onclick="window.location.href='mailto:shafqatameen316@gmail.com';">shafqatameen316@gmail.com</a></p>
-        <p><a href="https://www.linkedin.com/in/shafqat-ameen">LinkedIn</a></p>
-        <p><a href="https://github.com/shafqatameen">GitHub</a></p>
+        <p>Email: <a href="mailto:shafqatameen316@gmail.com">shafqatameen316@gmail.com</a></p>
+        <p><a href="https://www.linkedin.com/in/shafqat-ameen" target="_blank">LinkedIn</a></p>
+        <p><a href="https://github.com/shafqatameen" target="_blank">GitHub</a></p>
     </section>
     
     <footer>
         <p>&copy; 2025 Shafqat Ameen Mir. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+
+/* styles.css */
 body {
     background-color: #1a202c;
     color: white;
@@ -19,17 +21,25 @@ header img {
     border: 4px solid white;
 }
 
-h1 {
-    font-size: 2.5rem;
-    margin-top: 10px;
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-p {
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #63b3ed;
+    text-decoration: none;
     font-size: 1.2rem;
-    margin-top: 5px;
 }
 
-section {
+.content-section {
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
@@ -42,29 +52,133 @@ ul {
     padding: 0;
 }
 
-ul li {
-    font-size: 1.1rem;
-    margin: 10px 0;
+div.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-div img {
+div.gallery img {
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
     border-radius: 10px;
-    margin-top: 10px;
-}
-
-a {
-    color: #63b3ed;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 footer {
     background-color: #2d3748;
     padding: 10px;
     margin-top: 20px;
+}
+/*🚀 Skills & Tech Stack*/
+    .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        padding: 10px;
+    }
+    .skills-container span {
+        background: #1e1e2e;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 10px;
+        font-weight: bold;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .highlight {
+        color: #ff9800;
+        font-weight: bold;
+    }
+    /*🚀 Projects & Experience*/
+    .project-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .project {
+        background: #1e1e2e;
+        color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    }
+    .project h3 {
+        margin: 0 0 5px 0;
+    }
+    .tech-stack {
+        display: block;
+        margin-top: 8px;
+        font-size: 0.9em;
+        color: #ff9800;
+        font-weight: bold;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+    .achievement {
+        background: #1e1e2e;
+        color: #fff;
+        padding: 15px;
+        border-radius: 12px;
+        text-align: center;
+        width: 300px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out;
+    }
+    .achievement img {
+        width: 100%;
+        border-radius: 8px;
+    }
+    .achievement h3 {
+        margin: 10px 0 5px;
+    }
+    .achievement:hover {
+        transform: scale(1.05);
+    }
+
+/* 🔥 Background Canvas */
+#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* 🐉 Floating Dragon Animation */
+.dragon {
+    position: fixed;
+    bottom: 10%;
+    left: -150px;
+    width: 150px;
+    height: 100px;
+    background: url("content/dragon.png") no-repeat;
+    background-size: contain;
+    animation: dragonFly 10s infinite linear;
+}
+
+@keyframes dragonFly {
+    0% {
+        left: -150px;
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+    50% {
+        left: 50%;
+        opacity: 1;
+        transform: rotate(5deg);
+    }
+    100% {
+        left: 120%;
+        opacity: 0;
+        transform: rotate(0deg);
+    }
 }
